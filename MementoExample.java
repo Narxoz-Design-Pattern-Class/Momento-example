@@ -48,3 +48,26 @@ class Caretaker {
         }
     }
 }
+public class MementoExample {
+    public static void main(String[] args) {
+        Game game = new Game();
+        Caretaker caretaker = new Caretaker();
+
+        game.set("Level 1", 100);
+        System.out.println(game);
+        caretaker.save(game);
+
+        game.set("Level 2", 80);
+        System.out.println(game);
+        caretaker.save(game);
+
+        game.set("Level 3", 60);
+        System.out.println(game);
+
+        caretaker.undo(game);
+        System.out.println("After undo: " + game);
+
+        caretaker.undo(game);
+        System.out.println("After undo: " + game);
+    }
+}
